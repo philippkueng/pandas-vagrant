@@ -2,12 +2,11 @@
 sudo apt-get update
 
 # install dependencies
-sudo apt-get install ipython-notebook python-matplotlib python-scipy python-pip python-virtualenv -y
-
-virtualenv venv --no-site-packages
-source venv/bin/activate
+sudo apt-get install libatlas-dev libpng12-dev libfreetype6 libfreetype6-dev g++ libzmq-dev liblapack-dev gfortran python-dev build-essential python-qt4 ipython-notebook python-matplotlib python-scipy python-pip python-virtualenv python-openpyxl -y
 
 # install pandas
-pip install openpyxl xlrd xlwt pandas statsmodels
+sudo pip install xlrd xlwt pandas
+# sudo pip install statsmodels
 
-# start-stop-daemon --start -b -x /usr/bin/ipython notebook --pylab inline --ip 192.168.19.98 --port 8888
+# start the ipython notebook
+start-stop-daemon --start -b -d /vagrant -x /usr/bin/ipython -- notebook --pylab inline --ip 192.168.19.98 --port 8888
