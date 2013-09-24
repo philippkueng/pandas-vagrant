@@ -1,3 +1,8 @@
+# switching the OS language
+locale-gen
+export LC_ALL="en_US.UTF-8"
+sudo locale-gen en_US.UTF-8
+
 # update the package manager list
 sudo apt-get update
 
